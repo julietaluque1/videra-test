@@ -1,0 +1,1025 @@
+// --- COLOR TOKENS ---
+
+// Grays
+@grays-not-white: #F9FAFC;
+@grays-whisper: #F6F7F8;
+@grays-background: #F0F1F4;
+@grays-light: #E6E8ED;
+@grays-gray: #D9DCE4;
+@grays-mid: #C5CAD6;
+@grays-disabled: #A4ABBB;
+@grays-blue: #7F90AC;
+@grays-steel: #6A708D;
+@grays-charcoal: #4B4D5D;
+@grays-ink: #30313B;
+
+// Basics
+@basics-white: #FFFFFF;
+@basics-black: #24242D;
+
+// Blues
+@blues-light: #F1F8FE;
+@blues-glacier: #E0EEFE;
+@blues-sky: #BBDDFC;
+@blues-disabled: #94C0E8;
+@blues-sea: #3BA2F5;
+@blues-action: #0077DB;
+@blues-reef: #0768C4;
+@blues-hover: #0A4E8E;
+@blues-navy: #112D5C;
+@blues-navy-dark: #07152E;
+
+// Actions - Error
+@actions-error-light: #FDF2F2;
+@actions-error-mid: #EF5E57;
+@actions-error-primary: #A8211A;
+@actions-error-hover: #851A14;
+@actions-error-dark: #5E100C;
+
+// Actions - Warning
+@actions-warning-light: #FFF5E3;
+@actions-warning-mid: #F8C14A;
+@actions-warning-primary: #EE9500;
+@actions-warning-hover: #C27900;
+@actions-warning-dark: #5A3700;
+
+// Actions - Success
+@actions-success-light: #EFF8F2;
+@actions-success-mid: #72B88A;
+@actions-success-primary: #3F8F56;
+@actions-success-hover: #1F472C;
+@actions-success-dark: #183A25;
+
+// Actions - Accent
+@actions-accent-light: #ECEAF5;
+@actions-accent-mid: #7A74D3;
+@actions-accent-primary: #5A54AB;
+@actions-accent-hover: #353266;
+@actions-accent-dark: #1E1B39;
+
+
+// --- TYPOGRAPHY TOKENS ---
+
+// Headings
+.text-heading-h1() {
+  font-size: 32px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 44px;
+}
+.text-heading-h2() {
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+}
+.text-heading-h3() {
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+}
+.text-heading-h4() {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+// Body
+.text-body-b1() {
+  font-size: 32px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 40px;
+}
+.text-body-b1-bold() {
+  font-size: 32px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+}
+.text-body-b2() {
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+}
+.text-body-b2-bold() {
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 32px;
+}
+.text-body-b3() {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.22px;
+}
+.text-body-b3-bold() {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.22px;
+}
+.text-body-b4() {
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 22px;
+}
+.text-body-b4-bold() {
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+}
+.text-body-b5() {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+}
+.text-body-b5-bold() {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+}
+.text-body-b6() {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+}
+.text-body-b6-bold() {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+// Buttons
+.text-button-lg() {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+}
+.text-button-md() {
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+}
+.text-button-xs-sm() {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+// Chips
+.text-chip-md() {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+.text-chip-sm() {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+
+// --- COMPONENT STYLES ---
+
+// Google Fonts will be loaded via HTML link tag instead of @import
+
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: @basics-white;
+  color: @grays-ink;
+}
+
+// Component Library Styles - shadcn/ui inspired with sidebar
+.component-library {
+  display: flex;
+  min-height: 100vh;
+  background: #fafafa;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+// Component Sidebar Styles
+.component-sidebar {
+  width: 240px;
+  background: @basics-white;
+  border-right: 1px solid #e4e4e7;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.sidebar-header {
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #e4e4e7;
+  
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #09090b;
+    margin: 0;
+    letter-spacing: -0.025em;
+  }
+}
+
+.sidebar-nav {
+  padding: 16px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 2px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #71717a;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  
+  &:hover {
+    background: #f4f4f5;
+    color: #18181b;
+  }
+  
+  &--active {
+    background: #18181b;
+    color: @basics-white;
+    font-weight: 500;
+    
+    &:hover {
+      background: #18181b;
+      color: @basics-white;
+    }
+  }
+}
+
+// Component Content Area Styles
+.component-content {
+  flex: 1;
+  margin-left: 240px; // Account for fixed sidebar
+  padding: 48px 48px 48px 48px;
+  max-width: calc(100vw - 240px);
+  background: #fafafa;
+}
+
+.content-header {
+  margin-bottom: 48px;
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #09090b;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #71717a;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.component-section {
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #09090b;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.025em;
+  }
+  
+  .section-description {
+    font-size: 14px;
+    color: #71717a;
+    margin: 0 0 32px 0;
+    line-height: 1.5;
+  }
+}
+
+.component-showcase {
+  margin-bottom: 48px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: @basics-white;
+  overflow: hidden;
+  
+  .component-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #09090b;
+    margin: 0;
+    padding: 24px 24px 0 24px;
+    letter-spacing: -0.025em;
+  }
+  
+  .component-preview {
+    padding: 32px 24px 24px 24px;
+    background: @basics-white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100px;
+    border-bottom: 1px solid #f4f4f5;
+  }
+  
+  .component-code {
+    background: #fafafa;
+    
+    .code-block {
+      margin: 0;
+      padding: 20px 24px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+      color: #3f3f46;
+      background: transparent;
+      overflow-x: auto;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// Button Component Styles
+.btn {
+  .text-button-md();
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  
+  &:focus {
+    box-shadow: 0 0 0 2px @blues-action, 0 0 0 4px fade(@blues-action, 20%);
+  }
+  
+  &--primary {
+    background-color: @blues-action;
+    color: @basics-white;
+    
+    &:hover:not(:disabled) {
+      background-color: @blues-hover;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: @blues-reef;
+    }
+  }
+  
+  &--secondary {
+    background-color: @basics-white;
+    color: @blues-action;
+    border: 1px solid @blues-action;
+    
+    &:hover:not(:disabled) {
+      background-color: @blues-light;
+      border-color: @blues-hover;
+      color: @blues-hover;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: @blues-glacier;
+      border-color: @blues-reef;
+      color: @blues-reef;
+    }
+  }
+  
+  &--disabled {
+    background-color: @grays-disabled !important;
+    color: @basics-white !important;
+    border: none !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+    
+    &:hover, &:active, &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+
+// Patient Chip Component Styles (New Implementation)
+.patient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent; // All states have transparent background
+  border: none; // No borders or strokes
+  .text-chip-sm();
+  
+  i {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  span {
+    .text-chip-sm();
+  }
+  
+  // Incomplete Patient (default) - shows patient is incomplete but not in current session
+  &--incomplete {
+    color: @grays-blue;
+    
+    i {
+      color: @grays-blue;
+    }
+    
+    span {
+      color: @grays-blue;
+    }
+  }
+  
+  // Incomplete Patient (active) - shows patient is incomplete and in current session 
+  &--incomplete-active {
+    color: @actions-warning-primary;
+    
+    i {
+      color: @actions-warning-primary;
+    }
+    
+    span {
+      color: @actions-warning-primary;
+    }
+  }
+  
+  // Patient Completed (temporary) - shows patient was successfully completed
+  &--completed {
+    color: @actions-success-primary;
+    
+    i {
+      color: @actions-success-primary;
+    }
+    
+    span {
+      color: @actions-success-primary;
+    }
+  }
+}
+
+// Legacy Patient Status Chip Styles (for backwards compatibility)
+.patient-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  .text-chip-sm();
+  
+  i {
+    font-size: 8px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  // Incomplete patient chip
+  &--incomplete {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+    
+    i {
+      color: @blues-action;
+    }
+    
+    &.patient-status-chip--active {
+      background: @actions-warning-light;
+      color: @actions-warning-primary;
+      border-color: @actions-warning-mid;
+      
+      i {
+        color: @actions-warning-primary;
+      }
+    }
+  }
+  
+  // Completed patient chip
+  &--completed {
+    background: @actions-success-light;
+    color: @actions-success-primary;
+    border-color: @actions-success-mid;
+    
+    i {
+      color: @actions-success-primary;
+    }
+    
+    &.patient-status-chip--active {
+      background: @actions-success-mid;
+      color: @basics-white;
+      border-color: @actions-success-primary;
+      
+      i {
+        color: @basics-white;
+      }
+    }
+  }
+  
+  // Speaker chip
+  &--speaker {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+  }
+  
+  // Match percentage chip
+  &--match {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+    
+    i {
+      color: @blues-action;
+    }
+  }
+}
+
+// Participant Button Component Styles
+.participant-button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  // Smooth and slightly slower transition
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  .text-button-xs-sm();
+  font-family: Inter, sans-serif;
+  height: 32px;
+  padding: 8px;
+  overflow: hidden;
+  
+  i {
+    font-size: 12px;
+    width: 15px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: inherit;
+  }
+  
+  &__text {
+    .text-button-xs-sm();
+    white-space: nowrap;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-left: 0;
+    // Synchronized expansion - all properties animate together
+    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                margin-left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    
+    &:hover {
+      transform: none !important;
+    }
+  }
+  
+  // Ghost variant (default state for most buttons)
+  &--ghost {
+    background: transparent;
+    color: @grays-blue;
+    
+    i {
+      color: @grays-blue;
+    }
+    
+    &:hover:not(.participant-button--disabled) {
+      background: @grays-background;
+    }
+    
+    &:active:not(.participant-button--disabled) {
+      background: @grays-light;
+    }
+  }
+  
+  // Secondary variant (hover state for action buttons)
+  &--secondary {
+    background: @grays-light;
+    color: @basics-black;
+    
+    i {
+      color: @grays-blue; // Icons should be grays-blue, not basics-black
+    }
+    
+    .participant-button__text {
+      color: @basics-black; // Text should be basics-black
+    }
+    
+    &:hover:not(.participant-button--disabled) {
+      background: @grays-light; // Keep grays-light, no change on hover
+      
+      i {
+        color: @grays-blue; // Keep grays-blue for icons
+      }
+      
+      .participant-button__text {
+        color: @basics-black; // Keep basics-black for text
+      }
+    }
+    
+    &:active:not(.participant-button--disabled) {
+      background: @grays-mid;
+    }
+  }
+  
+  // Alternate variant (Add participant button)
+  &--alternate {
+    background: @blues-navy;
+    color: @basics-white;
+    
+    i {
+      color: @basics-white;
+    }
+    
+    .participant-button__text {
+      color: @basics-white;
+    }
+    
+    &:hover:not(.participant-button--disabled) {
+      background: @blues-navy; // Keep navy blue, no change on hover
+    }
+    
+    &:active:not(.participant-button--disabled) {
+      background: @blues-reef;
+    }
+  }
+  
+  // Button type specific styles
+  &--add-participant {
+    // Add participant is always alternate variant (blue)
+  }
+  
+  &--remove {
+    // Default ghost, hover secondary
+  }
+  
+  &--identify-patient {
+    // Default ghost, hover secondary
+  }
+  
+  &--edit-information {
+    // Default ghost, hover secondary
+  }
+  
+  &--move-to {
+    // Default ghost, hover secondary
+  }
+  
+  // State specific adjustments
+  &--default {
+    // Icon only state - left side stays fixed
+    padding: 8px 8px 8px 8px;
+    
+    .participant-button__text {
+      width: 0;
+      opacity: 0;
+      margin-left: 0;
+    }
+  }
+  
+  &--hover {
+    // Expanded state - only right side padding increases
+    padding: 8px 12px 8px 8px;
+    
+    .participant-button__text {
+      width: auto; // Let content determine width naturally
+      opacity: 1;
+      margin-left: 8px;
+    }
+  }
+  
+  // Focus states
+  &:focus:not(.participant-button--disabled) {
+    outline: 2px solid @blues-action;
+    outline-offset: 2px;
+  }
+  
+  // Pressed states
+  &:active:not(.participant-button--disabled) {
+    transform: translateY(1px);
+  }
+}
+
+// Patient Card Component Styles
+.patient-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: @basics-white;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  
+  &--hover {
+    background: @blues-light;
+  }
+  
+  &--selected {
+    background: @blues-light;
+    border-color: @blues-action;
+  }
+  
+  &--informative {
+    justify-content: space-between;
+  }
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.patient-pfp {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: @grays-background;
+  
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0.4px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    background: @grays-disabled;
+    border-radius: 50%;
+  }
+}
+
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.patient-name-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.patient-name {
+  .text-body-b5-bold();
+  color: @blues-navy;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.patient-id {
+  .text-body-b5();
+  color: @grays-blue;
+  margin: 0;
+  white-space: nowrap;
+  
+  .patient-card--hover &,
+  .patient-card--selected & {
+    color: @grays-steel;
+  }
+}
+
+.patient-chips {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.patient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  .text-chip-sm();
+  
+  i {
+    font-size: 8px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  &--warning {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+    
+    i {
+      color: @blues-action;
+    }
+  }
+  
+  &--speaker {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+  }
+  
+  &--match {
+    background: @blues-glacier;
+    color: @blues-action;
+    border-color: @blues-disabled;
+    
+    i {
+      color: @blues-action;
+    }
+  }
+}
+
+.patient-extended-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.patient-name-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 23px;
+}
+
+.patient-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.patient-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+  i {
+    font-size: 8px;
+    width: 8px;
+    color: @grays-disabled;
+  }
+  
+  span {
+    .text-body-b6();
+    color: @grays-blue;
+    
+    .patient-card--hover &,
+    .patient-card--selected & {
+      color: @grays-steel;
+    }
+  }
+}
+
+.patient-actions-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-match {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-expand-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  i {
+    font-size: 12px;
+    color: @grays-blue;
+  }
+  
+  &:hover {
+    background: @grays-background;
+  }
+}
+
+.patient-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-add-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.patient-edit-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.patient-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  .text-button-xs-sm();
+  
+  i {
+    font-size: 12px;
+  }
+  
+  &--primary {
+    background: @blues-navy;
+    color: @basics-white;
+    border: none;
+    
+    &:hover {
+      background: @blues-hover;
+    }
+  }
+  
+  &--ghost {
+    background: transparent;
+    color: @grays-blue;
+    border: none;
+    
+    i {
+      color: @grays-blue;
+    }
+    
+    &:hover {
+      background: @grays-background;
+    }
+  }
+}

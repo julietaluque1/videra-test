@@ -1,0 +1,677 @@
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #30313B;
+}
+.component-library {
+  display: flex;
+  min-height: 100vh;
+  background: #fafafa;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.component-sidebar {
+  width: 240px;
+  background: #FFFFFF;
+  border-right: 1px solid #e4e4e7;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 10;
+}
+.sidebar-header {
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #e4e4e7;
+}
+.sidebar-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #09090b;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+.sidebar-nav {
+  padding: 16px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 2px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #71717a;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.nav-item:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+.nav-item--active {
+  background: #18181b;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.nav-item--active:hover {
+  background: #18181b;
+  color: #FFFFFF;
+}
+.component-content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 48px 48px 48px 48px;
+  max-width: calc(100vw - 240px);
+  background: #fafafa;
+}
+.content-header {
+  margin-bottom: 48px;
+}
+.content-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #09090b;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+.content-header p {
+  font-size: 16px;
+  color: #71717a;
+  margin: 0;
+  line-height: 1.5;
+}
+.component-section .section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #09090b;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.025em;
+}
+.component-section .section-description {
+  font-size: 14px;
+  color: #71717a;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+.component-showcase {
+  margin-bottom: 48px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.component-showcase .component-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #09090b;
+  margin: 0;
+  padding: 24px 24px 0 24px;
+  letter-spacing: -0.025em;
+}
+.component-showcase .component-preview {
+  padding: 32px 24px 24px 24px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100px;
+  border-bottom: 1px solid #f4f4f5;
+}
+.component-showcase .component-code {
+  background: #fafafa;
+}
+.component-showcase .component-code .code-block {
+  margin: 0;
+  padding: 20px 24px;
+  font-size: 13px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  color: #3f3f46;
+  background: transparent;
+  overflow-x: auto;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.button-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+}
+.btn:focus {
+  box-shadow: 0 0 0 2px #0077DB, 0 0 0 4px rgba(0, 119, 219, 0.2);
+}
+.btn--primary {
+  background-color: #0077DB;
+  color: #FFFFFF;
+}
+.btn--primary:hover:not(:disabled) {
+  background-color: #0A4E8E;
+}
+.btn--primary:active:not(:disabled) {
+  background-color: #0768C4;
+}
+.btn--secondary {
+  background-color: #FFFFFF;
+  color: #0077DB;
+  border: 1px solid #0077DB;
+}
+.btn--secondary:hover:not(:disabled) {
+  background-color: #F1F8FE;
+  border-color: #0A4E8E;
+  color: #0A4E8E;
+}
+.btn--secondary:active:not(:disabled) {
+  background-color: #E0EEFE;
+  border-color: #0768C4;
+  color: #0768C4;
+}
+.btn--disabled {
+  background-color: #A4ABBB !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+.btn--disabled:hover,
+.btn--disabled:active,
+.btn--disabled:focus {
+  box-shadow: none !important;
+}
+.patient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+.patient-chip i {
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient-chip span {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+.patient-chip--incomplete {
+  color: #7F90AC;
+}
+.patient-chip--incomplete i {
+  color: #7F90AC;
+}
+.patient-chip--incomplete span {
+  color: #7F90AC;
+}
+.patient-chip--incomplete-active {
+  color: #EE9500;
+}
+.patient-chip--incomplete-active i {
+  color: #EE9500;
+}
+.patient-chip--incomplete-active span {
+  color: #EE9500;
+}
+.patient-chip--completed {
+  color: #3F8F56;
+}
+.patient-chip--completed i {
+  color: #3F8F56;
+}
+.patient-chip--completed span {
+  color: #3F8F56;
+}
+.patient-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+.patient-status-chip i {
+  font-size: 8px;
+  width: 8px;
+  height: 8px;
+}
+.patient-status-chip--incomplete {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-status-chip--incomplete i {
+  color: #0077DB;
+}
+.patient-status-chip--incomplete.patient-status-chip--active {
+  background: #FFF5E3;
+  color: #EE9500;
+  border-color: #F8C14A;
+}
+.patient-status-chip--incomplete.patient-status-chip--active i {
+  color: #EE9500;
+}
+.patient-status-chip--completed {
+  background: #EFF8F2;
+  color: #3F8F56;
+  border-color: #72B88A;
+}
+.patient-status-chip--completed i {
+  color: #3F8F56;
+}
+.patient-status-chip--completed.patient-status-chip--active {
+  background: #72B88A;
+  color: #FFFFFF;
+  border-color: #3F8F56;
+}
+.patient-status-chip--completed.patient-status-chip--active i {
+  color: #FFFFFF;
+}
+.patient-status-chip--speaker {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-status-chip--match {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-status-chip--match i {
+  color: #0077DB;
+}
+.participant-button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  font-family: Inter, sans-serif;
+  height: 32px;
+  padding: 8px;
+  overflow: hidden;
+}
+.participant-button i {
+  font-size: 12px;
+  width: 15px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: inherit;
+}
+.participant-button__text {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+  white-space: nowrap;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-left: 0;
+  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), margin-left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.participant-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.participant-button--disabled:hover {
+  transform: none !important;
+}
+.participant-button--ghost {
+  background: transparent;
+  color: #7F90AC;
+}
+.participant-button--ghost i {
+  color: #7F90AC;
+}
+.participant-button--ghost:hover:not(.participant-button--disabled) {
+  background: #F0F1F4;
+}
+.participant-button--ghost:active:not(.participant-button--disabled) {
+  background: #E6E8ED;
+}
+.participant-button--secondary {
+  background: #E6E8ED;
+  color: #24242D;
+}
+.participant-button--secondary i {
+  color: #7F90AC;
+}
+.participant-button--secondary .participant-button__text {
+  color: #24242D;
+}
+.participant-button--secondary:hover:not(.participant-button--disabled) {
+  background: #E6E8ED;
+}
+.participant-button--secondary:hover:not(.participant-button--disabled) i {
+  color: #7F90AC;
+}
+.participant-button--secondary:hover:not(.participant-button--disabled) .participant-button__text {
+  color: #24242D;
+}
+.participant-button--secondary:active:not(.participant-button--disabled) {
+  background: #C5CAD6;
+}
+.participant-button--alternate {
+  background: #112D5C;
+  color: #FFFFFF;
+}
+.participant-button--alternate i {
+  color: #FFFFFF;
+}
+.participant-button--alternate .participant-button__text {
+  color: #FFFFFF;
+}
+.participant-button--alternate:hover:not(.participant-button--disabled) {
+  background: #112D5C;
+}
+.participant-button--alternate:active:not(.participant-button--disabled) {
+  background: #0768C4;
+}
+.participant-button--default {
+  padding: 8px 8px 8px 8px;
+}
+.participant-button--default .participant-button__text {
+  width: 0;
+  opacity: 0;
+  margin-left: 0;
+}
+.participant-button--hover {
+  padding: 8px 12px 8px 8px;
+}
+.participant-button--hover .participant-button__text {
+  width: auto;
+  opacity: 1;
+  margin-left: 8px;
+}
+.participant-button:focus:not(.participant-button--disabled) {
+  outline: 2px solid #0077DB;
+  outline-offset: 2px;
+}
+.participant-button:active:not(.participant-button--disabled) {
+  transform: translateY(1px);
+}
+.patient-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.patient-card--hover {
+  background: #F1F8FE;
+}
+.patient-card--selected {
+  background: #F1F8FE;
+  border-color: #0077DB;
+}
+.patient-card--informative {
+  justify-content: space-between;
+}
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.patient-pfp {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F0F1F4;
+}
+.patient-pfp__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0.4px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.patient-pfp__placeholder {
+  width: 100%;
+  height: 100%;
+  background: #A4ABBB;
+  border-radius: 50%;
+}
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+}
+.patient-name-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.patient-name {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  color: #112D5C;
+  margin: 0;
+  white-space: nowrap;
+}
+.patient-id {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  color: #7F90AC;
+  margin: 0;
+  white-space: nowrap;
+}
+.patient-card--hover .patient-id,
+.patient-card--selected .patient-id {
+  color: #6A708D;
+}
+.patient-chips {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.patient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+.patient-chip i {
+  font-size: 8px;
+  width: 8px;
+  height: 8px;
+}
+.patient-chip--warning {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-chip--warning i {
+  color: #0077DB;
+}
+.patient-chip--speaker {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-chip--match {
+  background: #E0EEFE;
+  color: #0077DB;
+  border-color: #94C0E8;
+}
+.patient-chip--match i {
+  color: #0077DB;
+}
+.patient-extended-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.patient-name-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 23px;
+}
+.patient-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.patient-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.patient-contact-item i {
+  font-size: 8px;
+  width: 8px;
+  color: #A4ABBB;
+}
+.patient-contact-item span {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  color: #7F90AC;
+}
+.patient-card--hover .patient-contact-item span,
+.patient-card--selected .patient-contact-item span {
+  color: #6A708D;
+}
+.patient-actions-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.patient-match {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.patient-expand-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.patient-expand-btn i {
+  font-size: 12px;
+  color: #7F90AC;
+}
+.patient-expand-btn:hover {
+  background: #F0F1F4;
+}
+.patient-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.patient-add-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.patient-edit-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.patient-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+}
+.patient-action-btn i {
+  font-size: 12px;
+}
+.patient-action-btn--primary {
+  background: #112D5C;
+  color: #FFFFFF;
+  border: none;
+}
+.patient-action-btn--primary:hover {
+  background: #0A4E8E;
+}
+.patient-action-btn--ghost {
+  background: transparent;
+  color: #7F90AC;
+  border: none;
+}
+.patient-action-btn--ghost i {
+  color: #7F90AC;
+}
+.patient-action-btn--ghost:hover {
+  background: #F0F1F4;
+}

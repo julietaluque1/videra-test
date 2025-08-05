@@ -1,0 +1,8 @@
+---
+description: >
+  Refer to this Storybook for structure and behavior when creating or updating UI components:
+  https://dev.viderahealth.com/storybook/index.html
+globs:
+  - "src/**/*.cljs"
+alwaysApply: true
+---

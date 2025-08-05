@@ -1,0 +1,10 @@
+---
+description: >
+  Style components using LESS only.
+  - Do not use inline styles
+  - All styles should be defined in `.less` files
+globs:
+  - "src/**/*.less"
+  - "src/**/*.cljs"
+alwaysApply: true
+---

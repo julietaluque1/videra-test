@@ -1,0 +1,11 @@
+---
+description: >
+  Write all UI in ClojureScript using Reagent as a React wrapper.
+  - Use hiccup syntax for markup
+  - Use functional components with `defn`
+  - Use `reagent/atom` for local state
+  - Use `re-frame` only if necessary
+globs:
+  - "src/**/*.cljs"
+alwaysApply: true
+---
