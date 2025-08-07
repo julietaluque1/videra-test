@@ -20,7 +20,12 @@
     "clean": "rimraf public/js",
     "nuke": "rimraf public/js .shadow-cljs node_modules yarn.lock package-lock.json out report.html",
     "shadow-cljs-server": "shadow-cljs server",
-    "less:watch": "less-watch-compiler styles public"
+    "less:watch": "less-watch-compiler styles public/css main.less",
+    "less:compile": "lessc styles/main.less public/css/main.css",
+    "css:safe-compile": "./safe-compile-css.sh",
+    "css:safe-watch": "node safe-less-watch.js",
+    "css:backup": "cp public/css/main.css public/css/main.css.backup-$(date +%Y%m%d_%H%M%S)",
+    "dev:safe": "./start-dev-safe.sh"
   },
   "devDependencies": {
     "less-watch-compiler": "^1.16.3",

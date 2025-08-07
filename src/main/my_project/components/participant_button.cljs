@@ -34,7 +34,7 @@
                                             :text "Edit information"
                                             :default-variant "ghost"
                                             :hover-variant "secondary"}
-                          "move-to" {:icon "arrows-alt-v"
+                          "move-to" {:icon "arrow-up-arrow-down"
                                     :text (or custom-text "Move to")
                                     :default-variant "ghost"
                                     :hover-variant "secondary"}
@@ -67,7 +67,7 @@
                 :title (when (not show-text?) (:text button-config))}
        
        ;; Leading icon (always shown)
-       [:i {:class (str "fa fa-" (:icon button-config))}]
+       [:i {:class (str "fas fa-" (:icon button-config))}]
        
        ;; Text (only shown on hover state)
        (when show-text?

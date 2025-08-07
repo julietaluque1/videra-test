@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Font Awesome Pro Test</title>
+    <link rel="stylesheet" href="/fontawesome-pro/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .icon-test {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f8f8;
+            border-radius: 4px;
+        }
+        .icon-test i {
+            font-size: 20px;
+            color: #0077DB;
+            width: 30px;
+            text-align: center;
+        }
+        .icon-label {
+            font-size: 14px;
+            color: #333;
+            font-family: monospace;
+        }
+        .status {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .status-ok {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Font Awesome Pro Test Page</h1>
+        <p>This page tests if Font Awesome Pro is loading correctly.</p>
+        
+        <h2>Icon Tests:</h2>
+        
+        <div class="icon-test">
+            <i class="fas fa-sparkles"></i>
+            <span class="icon-label">fas fa-sparkles</span>
+            <span class="status" id="sparkles-status">Testing...</span>
+        </div>
+        
+        <div class="icon-test">
+            <i class="fa-solid fa-sparkles"></i>
+            <span class="icon-label">fa-solid fa-sparkles</span>
+            <span class="status" id="sparkles2-status">Testing...</span>
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            <span class="icon-label">fas fa-wand-magic-sparkles</span>
+            <span class="status" id="wand-status">Testing...</span>
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-check"></i>
+            <span class="icon-label">fas fa-check</span>
+            <span class="status" id="check-status">Testing...</span>
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-plus"></i>
+            <span class="icon-label">fas fa-plus</span>
+            <span class="status" id="plus-status">Testing...</span>
+        </div>
+        
+        <h2>Console Output:</h2>
+        <pre id="console-output" style="background: #f5f5f5; padding: 10px; border-radius: 4px; font-size: 12px;">Checking Font Awesome loading...</pre>
+    </div>
+    
+    <script>
+        function checkIcon(selector, statusId) {
+            const icon = document.querySelector(selector);
+            const status = document.getElementById(statusId);
+            
+            if (icon) {
+                const computed = window.getComputedStyle(icon, '::before');
+                const content = computed.content;
+                
+                if (content && content !== 'none' && content !== '""') {
+                    status.textContent = '✓ Loaded';
+                    status.className = 'status status-ok';
+                    return true;
+                } else {
+                    status.textContent = '✗ No content';
+                    status.className = 'status status-fail';
+                    return false;
+                }
+            }
+            return false;
+        }
+        
+        window.addEventListener('load', function() {
+            const output = document.getElementById('console-output');
+            let log = [];
+            
+            // Check if Font Awesome CSS is loaded
+            const sheets = document.styleSheets;
+            let faLoaded = false;
+            
+            for (let i = 0; i < sheets.length; i++) {
+                if (sheets[i].href && sheets[i].href.includes('fontawesome')) {
+                    faLoaded = true;
+                    log.push('✓ Font Awesome CSS found: ' + sheets[i].href);
+                    break;
+                }
+            }
+            
+            if (!faLoaded) {
+                log.push('✗ Font Awesome CSS not found in stylesheets');
+            }
+            
+            // Check individual icons
+            setTimeout(() => {
+                checkIcon('.fa-sparkles', 'sparkles-status');
+                checkIcon('.fa-solid.fa-sparkles', 'sparkles2-status');
+                checkIcon('.fa-wand-magic-sparkles', 'wand-status');
+                checkIcon('.fa-check', 'check-status');
+                checkIcon('.fa-plus', 'plus-status');
+                
+                // Check if any Font Awesome fonts are loaded
+                if (document.fonts) {
+                    document.fonts.ready.then(() => {
+                        let faFonts = [];
+                        document.fonts.forEach((font) => {
+                            if (font.family.includes('Font Awesome')) {
+                                faFonts.push(font.family + ' - ' + font.status);
+                            }
+                        });
+                        
+                        if (faFonts.length > 0) {
+                            log.push('\\nFont Awesome fonts loaded:');
+                            faFonts.forEach(f => log.push('  ' + f));
+                        } else {
+                            log.push('\\n✗ No Font Awesome fonts detected');
+                        }
+                        
+                        output.textContent = log.join('\\n');
+                    });
+                } else {
+                    output.textContent = log.join('\\n');
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

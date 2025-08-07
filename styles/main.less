@@ -364,6 +364,44 @@ body {
       white-space: pre-wrap;
     }
   }
+  
+  .component-description {
+    font-size: 14px;
+    color: #71717a;
+    margin: 0;
+    padding: 8px 24px 0 24px;
+    line-height: 1.5;
+  }
+}
+
+// Variant container styles for Patient Cards section
+.variant-container {
+  margin-bottom: 48px;
+  
+  .variant-header {
+    margin-bottom: 24px;
+    
+    .variant-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #09090b;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.025em;
+    }
+    
+    .variant-description {
+      font-size: 14px;
+      color: #71717a;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+  
+  .variant-components {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 .button-group {
@@ -441,8 +479,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 4px 10px;
   background: transparent; // All states have transparent background
   border: none; // No borders or strokes
+  border-radius: 16px;
   .text-chip-sm();
   
   i {
@@ -857,9 +897,9 @@ body {
   .text-chip-sm();
   
   i {
-    font-size: 8px;
-    width: 8px;
-    height: 8px;
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
   }
   
   &--warning {
@@ -897,10 +937,10 @@ body {
 
 .patient-name-id {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 4px;
-  height: 23px;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .patient-contact-info {
@@ -1022,4 +1062,2180 @@ body {
       background: @grays-background;
     }
   }
+}
+
+
+// Step 2 Screen Styles
+.step2-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: @basics-white;
+  overflow: hidden;
+}
+
+// Nav Header Styles
+.nav-header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: @basics-white;
+  border-bottom: 1px solid #F0F1F4;
+  gap: 8px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  flex-basis: 0;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  h1 {
+    .text-body-b6();
+    color: @grays-steel;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.nav-back-btn,
+.nav-close-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  .text-body-b6();
+  color: @grays-steel;
+  
+  &:hover {
+    background: #f4f4f5;
+  }
+  
+  i {
+    font-size: 16px;
+    color: @grays-steel;
+  }
+}
+
+.saved-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  .text-body-b6();
+  color: @grays-charcoal;
+  
+  i {
+    font-size: 14px;
+    color: @blues-action;
+  }
+}
+
+// Main Content Layout
+.main-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+// Left Panel Styles
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background: @basics-white;
+  border-right: 1px solid #E6E8ED;
+  
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px 40px;
+    gap: 24px;
+  }
+}
+
+// Segmented Control (Tabs) Styles
+.segmented-control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: #F0F1F4;
+  border-radius: 8px;
+  height: 40px;
+  
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 32px;
+    padding: 0 16px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    .text-button-xs-sm();
+    color: @basics-black;
+    transition: all 0.2s ease;
+    
+    &--active {
+      background: @basics-white;
+      border: 1px solid @grays-mid;
+      color: inherit;
+    }
+    
+    &:hover:not(.tab--active) {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// Navigation Section
+.navigation-section {
+  display: flex;
+  gap: 8px;
+  
+  .search-input-container {
+    flex: 1;
+  }
+  
+  .primary-button {
+    flex-shrink: 0;
+  }
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+  padding: 10px 12px;
+  background: @basics-white;
+  border: 1px solid #C5CAD6;
+  border-radius: 6px;
+  
+  i {
+    font-size: 16px;
+    color: #C5CAD6;
+  }
+  
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    .text-body-b3();
+    color: @grays-charcoal;
+    
+    &::placeholder {
+      color: #A4ABBB;
+    }
+  }
+}
+
+.new-patient-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: transparent;
+  border: 1px solid #C5CAD6;
+  border-radius: 6px;
+  cursor: pointer;
+  .text-body-b3();
+  color: @grays-charcoal;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #f4f4f5;
+  }
+  
+  i {
+    font-size: 16px;
+    color: @blues-action;
+  }
+}
+
+// Patient List Styles
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+// Right Panel Styles
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background: #F6F7F8;
+  
+  .right-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+  }
+}
+
+// Alert Section Styles
+.alert-section {
+  padding: 24px 40px 0px;
+}
+
+.alert-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 48px 16px 16px;
+  background: #E0EEFE;
+  border-radius: 6px;
+  box-shadow: 0px 1px 4px 0px rgba(24, 25, 27, 0.15);
+  position: relative;
+  
+  i {
+    font-size: 16px;
+    color: @blues-action;
+    margin-top: 2px;
+  }
+  
+  span {
+    flex: 1;
+    .text-body-b3();
+    color: @grays-charcoal;
+    line-height: 1.375em;
+    font-weight: 600;
+  }
+  
+  .alert-close {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    
+    .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+}
+
+// Patients Section Styles
+.patients-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 40px;
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  
+  h2 {
+    .text-body-b4();
+    font-weight: 600;
+    text-transform: uppercase;
+    color: @grays-steel;
+    margin: 0;
+  }
+  
+  .count {
+    .text-body-b4();
+    color: @grays-steel;
+  }
+}
+
+.section-description {
+  .text-body-b6();
+  color: @grays-steel;
+  margin: 0;
+  line-height: 1.333em;
+}
+
+.subjects-section,
+.contributors-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  h3 {
+    .text-body-b6();
+    font-weight: 600;
+    color: #A4ABBB;
+    margin: 0;
+  }
+}
+
+// Divider Styles
+.divider {
+  height: 1px;
+  background: #C5CAD6;
+  margin: 16px 40px;
+}
+
+// Providers Section Styles
+.providers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0px 40px 24px;
+  
+  .patient-card {
+    background: transparent;
+    
+    &:hover {
+      background: @blues-light;
+    }
+  }
+}
+
+// Bottom Bar Styles
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  background: #F6F7F8;
+  border-top: 1px solid #E6E8ED;
+  flex-shrink: 0;
+  width: 100%;
+  
+  .primary-button,
+  .secondary-button {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .secondary-button {
+    background: @grays-light;
+    color: @basics-black;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 24px;
+    cursor: pointer;
+    .text-button-md();
+    transition: all 120ms ease;
+    
+    &:hover {
+      background: @grays-light;
+      box-shadow: inset 0 0 0 1px @grays-mid;
+    }
+    
+    &:active {
+      background: darken(@grays-light, 5%);
+      box-shadow: inset 0 0 0 1px @grays-mid;
+    }
+  }
+}
+
+.next-step-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px 24px;
+  background: @blues-action;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  .text-body-b3();
+  color: @basics-white;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: darken(@blues-action, 10%);
+  }
+}
+
+// Step 3 Screen Styles
+.step3-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: @basics-white;
+  overflow: hidden;
+}
+
+// Main Content for Step 3 - Single Column Centered
+.step3-screen .main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Header Section Styles
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 40px;
+  gap: 2px;
+  width: 100%;
+  
+  .screen-title {
+    .text-heading-h3();
+    color: @grays-ink;
+    margin: 0;
+  }
+  
+  .screen-description {
+    .text-body-b4();
+    color: @grays-ink;
+    margin: 0;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+}
+
+// Options Container - Centers the grid
+.options-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+// Options Grid Styles
+.options-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  max-width: 900px;
+  flex-wrap: nowrap;
+}
+
+// Option Component Styles
+.option-component {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: @basics-white;
+  border: 2px solid @grays-light;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  
+  &:hover {
+    border-color: @blues-sea;
+    background: @blues-light;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  &--selected {
+    border-color: @blues-action;
+    background: @blues-light;
+    box-shadow: 0 0 0 4px rgba(0, 119, 219, 0.1);
+    
+    .option-icon {
+      background: @blues-action;
+      color: @basics-white;
+    }
+  }
+  
+  .option-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: @grays-background;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: all 200ms ease;
+    
+    i {
+      font-size: 20px;
+      color: @grays-steel;
+    }
+  }
+  
+  .option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  
+  .option-title {
+    .text-heading-h4();
+    color: @grays-ink;
+    margin: 0;
+  }
+  
+  .option-description {
+    .text-body-b4();
+    color: @grays-steel;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Next Button Container for Step 3
+.next-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+// Input Option Component Styles
+.input-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 208px;
+  height: 290px;
+  padding: 32px;
+  background: @basics-white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  
+  // Hover state (applies to both selected and unselected)
+  &:hover {
+    background: @grays-whisper;
+  }
+  
+  // Icon container (144x144px centered)
+  .input-option-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 144px;
+    height: 144px;
+    background: @basics-white;
+    border: 1px solid @grays-light;
+    border-radius: 24px;
+    margin-bottom: 8px;
+    transition: all 200ms ease;
+    
+    i {
+      font-size: 32px;
+      color: @grays-steel;
+    }
+    
+    // SVG icon wrapper for consistent sizing
+    .input-option-svg-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+    }
+    
+    // SVG icon styling
+    .input-option-svg-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      pointer-events: none; // Prevent object tag from capturing clicks
+    }
+  }
+  
+  // Selected state - only affects inner container
+  &--selected {
+    .input-option-icon-container {
+      background: @blues-light;
+      border: 1px solid @blues-action;
+      box-shadow: 0 0 0 2px #CDE7FF;
+      
+      // SVG icons already have proper colors
+    }
+  }
+  
+  // Content below icon
+  .input-option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+  
+  // Title
+  .input-option-title {
+    .text-body-b4();
+    font-weight: 600;
+    color: @blues-navy-dark;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  // Description
+  .input-option-description {
+    .text-body-b6();
+    color: @grays-steel;
+    margin: 0;
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+// Step 4 Screen Styles
+.step4-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: @basics-white;
+  overflow: hidden;
+}
+
+// Main Content for Step 4 - Single Column Centered
+.step4-screen .main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Listen Layout Styles
+.listen-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 650px;
+  
+  .header-section {
+    margin-bottom: 0;
+  }
+}
+
+// Header Section for Step 4
+.step4-screen .header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  
+  .screen-title {
+    .text-heading-h3();
+    color: @grays-ink;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .screen-description {
+    .text-body-b4();
+    color: @grays-ink;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+}
+
+// Body Section
+.body-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 650px;
+}
+
+// Microphone Selector Styles
+.microphone-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  
+  .microphone-header {
+    h3 {
+      .text-button-md();
+      color: @basics-black;
+      margin: 0;
+    }
+  }
+  
+  .microphone-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    width: 650px;
+    height: 50px;
+    background: @blues-light;
+    border: 1px solid @blues-disabled;
+    border-radius: 16px;
+    
+    .microphone-icon {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      
+      i {
+        font-size: 16px;
+        color: @blues-action;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      span {
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.2857142857142858em;
+        letter-spacing: -0.7142857249294009%;
+        color: @basics-black;
+      }
+    }
+    
+    .audio-indicator {
+      display: flex;
+      align-items: center;
+      width: 26px;
+      height: 26px;
+      position: relative;
+      
+      .audio-bar {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: @basics-white;
+        border-radius: 6px;
+        
+        &:nth-child(1) {
+          left: 3.78px;
+          top: 11px;
+        }
+        
+        &:nth-child(2) {
+          left: 10.78px;
+          top: 11px;
+        }
+        
+        &:nth-child(3) {
+          left: 17.78px;
+          top: 11px;
+        }
+      }
+    }
+    
+    i.fa-angle-down {
+      font-size: 16px;
+      color: @grays-blue;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// Text Area Styles
+.text-area-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  
+  .text-area-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    h3 {
+      .text-button-md();
+      color: @basics-black;
+      margin: 0;
+    }
+    
+    .optional-label {
+      .text-body-b6();
+      color: @grays-steel;
+      margin: 0;
+    }
+  }
+  
+  .text-area-field {
+    width: 100%;
+    
+    textarea {
+      width: 100%;
+      min-height: 108px;
+      padding: 10px 12px;
+      background: @basics-white;
+      border: 1px solid @grays-mid;
+      border-radius: 6px;
+      resize: vertical;
+      .text-body-b4();
+      color: @grays-charcoal;
+      line-height: 1.375;
+      
+      &::placeholder {
+        color: @grays-disabled;
+      }
+      
+      &:focus {
+        outline: none;
+        border-color: @blues-action;
+        box-shadow: 0 0 0 2px rgba(0, 119, 219, 0.1);
+      }
+    }
+  }
+}
+
+// Actions Section
+.actions-section {
+  display: flex;
+  gap: 8px;
+  width: 650px;
+  
+  .secondary-button {
+    flex: 1;
+    padding: 14px 24px;
+    background: @grays-light;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    .text-body-b4();
+    font-weight: 500;
+    color: @grays-ink;
+    transition: all 200ms ease;
+    
+    &:hover {
+      background: darken(@grays-light, 5%);
+    }
+  }
+  
+  .primary-button {
+    flex: 1;
+  }
+}
+
+// Alert Component Styles
+.alert {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 48px 16px 16px;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0px 1px 4px 0px rgba(24, 25, 27, 0.15);
+  
+  .alert-close {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    
+    .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+  
+  .alert-content {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .alert-text {
+    display: flex;
+    gap: 12px;
+    
+    i {
+      font-size: 16px;
+      margin-top: 2px;
+    }
+  }
+  
+  .alert-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+  
+  .alert-title {
+    .text-body-b3();
+    font-weight: 600;
+    line-height: 1.375em;
+  }
+  
+  .alert-description {
+    .text-body-b5();
+    line-height: 1.375em;
+  }
+  
+  &--info {
+    background: @blues-glacier;
+    
+    i, .alert-title, .alert-description {
+      color: @basics-black;
+    }
+    
+    .alert-text i {
+      color: @blues-action;
+    }
+    
+    .alert-close .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+  
+  &--success {
+    background: @actions-success-light;
+    
+    i, .alert-title, .alert-description {
+      color: @basics-black;
+    }
+    
+    .alert-text i {
+      color: @actions-success-primary;
+    }
+    
+    .alert-close .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+  
+  &--warning {
+    background: @actions-warning-light;
+    
+    i, .alert-title, .alert-description {
+      color: @basics-black;
+    }
+    
+    .alert-text i {
+      color: @actions-warning-primary;
+    }
+    
+    .alert-close .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+  
+  &--error {
+    background: @actions-error-light;
+    
+    i, .alert-title, .alert-description {
+      color: @basics-black;
+    }
+    
+    .alert-text i {
+      color: @actions-error-primary;
+    }
+    
+    .alert-close .primary-button--icon-no-hover {
+      color: @basics-black;
+      
+      &:hover {
+        color: @basics-black;
+      }
+    }
+  }
+}
+
+// Primary Button Component Styles
+.primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  // Size variants
+  &--xs {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    
+    i {
+      font-size: 12px;
+    }
+  }
+  
+  &--sm {
+    padding: 10px 16px;
+    .text-body-b4();
+    
+    i {
+      font-size: 14px;
+    }
+  }
+  
+  &--md {
+    padding: 14px 24px;
+    .text-button-md();
+    
+    i {
+      font-size: 16px;
+    }
+  }
+  
+  &--lg {
+    padding: 16px 32px;
+    .text-body-b2();
+    
+    i {
+      font-size: 18px;
+    }
+  }
+  
+  // Variant styles
+  &--primary {
+    background: @blues-action;
+    color: @basics-white;
+    
+    &:hover:not(.primary-button--disabled) {
+      background: darken(@blues-action, 10%);
+    }
+  }
+  
+  &--outline {
+    background: @basics-white;
+    border: 1px solid @grays-mid;
+    color: @basics-black;
+    padding: 14px 24px;
+    height: 44px;
+    width: auto;
+    gap: 8px;
+    
+    &:hover:not(.primary-button--disabled) {
+      background: @grays-whisper;
+      border-color: @grays-mid;
+    }
+    
+    &:active:not(.primary-button--disabled) {
+      background: @grays-background;
+      border-color: @grays-steel;
+    }
+    
+    &:focus:not(.primary-button--disabled) {
+      background: @basics-white;
+      border-color: @grays-mid;
+      box-shadow: 0 0 0 2px #E0EEFE;
+    }
+    
+    i {
+      color: @blues-action;
+    }
+  }
+  
+  &--ghost {
+    background: transparent;
+    color: @grays-steel;
+    
+    &:hover:not(.primary-button--disabled) {
+      background: #f4f4f5;
+    }
+  }
+  
+  &--danger {
+    background: @actions-error-light;
+    border: 1px solid @actions-error-mid;
+    color: @basics-black;
+    padding: 14px 24px;
+    height: 44px;
+    
+    &:hover:not(.primary-button--disabled) {
+      border-width: 2px;
+      padding: 13px 23px;
+      height: 44px;
+    }
+    
+    &:active:not(.primary-button--disabled) {
+      background: darken(@actions-error-light, 5%);
+    }
+  }
+  
+  .primary-button-text {
+    font-weight: 500;
+  }
+  
+  // Icon-only button styling
+  &--icon-only {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &.primary-button--xs {
+      width: 24px;
+      height: 24px;
+      
+      i {
+        font-size: 12px;
+      }
+    }
+    
+    &.primary-button--sm {
+      width: 32px;
+      height: 32px;
+      
+      i {
+        font-size: 16px;
+      }
+    }
+    
+    &.primary-button--md {
+      width: 40px;
+      height: 40px;
+      
+      i {
+        font-size: 20px;
+      }
+    }
+    
+    &.primary-button--lg {
+      width: 48px;
+      height: 48px;
+      
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+  
+  // Icon variant with hover background
+  &--icon {
+    background: transparent;
+    border: none;
+    color: @grays-steel;
+    transition: all 120ms ease;
+    border-radius: 4px;
+    
+    &:hover:not(.primary-button--disabled) {
+      background: @grays-background;
+      color: @grays-charcoal;
+    }
+    
+    &:active:not(.primary-button--disabled) {
+      background: @grays-light;
+    }
+  }
+  
+  // Icon variant without hover background
+  &--icon-no-hover {
+    background: transparent;
+    border: none;
+    color: @grays-steel;
+    transition: color 120ms ease;
+    border-radius: 4px;
+    
+    &:hover:not(.primary-button--disabled) {
+      color: @grays-charcoal;
+    }
+    
+    &:active:not(.primary-button--disabled) {
+      color: @basics-black;
+    }
+  }
+}
+
+// Search Input Component Styles
+.search-input-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  background: @basics-white;
+  border: 1px solid @grays-mid;
+  border-radius: 6px;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  
+  &--focused {
+    border-color: @blues-action;
+    box-shadow: 0 0 0 2px #E0EEFE;
+  }
+  
+  &:focus-within {
+    border-color: @blues-action;
+    box-shadow: 0 0 0 2px #E0EEFE;
+  }
+  
+  &--error {
+    border-color: #DC2626;
+  }
+  
+  i {
+    font-size: 16px;
+    color: @grays-mid;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  
+  .search-input-text {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      .text-body-b4();
+      font-weight: 400;
+      color: @grays-disabled;
+      
+      &::placeholder {
+        color: @grays-disabled;
+        font-weight: 400;
+      }
+      
+      &:not(:placeholder-shown) {
+        color: @basics-black;
+      }
+    }
+  }
+}
+
+.search-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .search-input-title {
+    .text-body-b4();
+    font-weight: 500;
+    color: @grays-charcoal;
+    
+    .required {
+      color: #DC2626;
+      margin-left: 2px;
+    }
+    
+    .optional {
+      color: #A4ABBB;
+      margin-left: 4px;
+    }
+  }
+}
+
+.search-input-help {
+  .text-body-b6();
+  color: #A4ABBB;
+}
+
+// Scrollbar Styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.15);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.2);
+  background-clip: content-box;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+// Toast Notification Styles
+.toast-manager {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-container {
+  position: relative;
+  margin: 16px 0;
+  pointer-events: auto;
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.toast--visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: @basics-white;
+  border: 1px solid @grays-light;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  &--success {
+    background: @actions-success-primary;
+    border: none;
+    padding: 16px;
+    gap: 8px;
+    
+    i {
+      color: @basics-white;
+      font-size: 16px;
+    }
+    
+    .toast-message {
+      .text-body-b4-bold();
+      color: @basics-white !important;
+    }
+  }
+  
+  &--info {
+    background: @blues-action;
+    border: none;
+    padding: 16px;
+    gap: 8px;
+    
+    i {
+      color: @basics-white;
+      font-size: 16px;
+    }
+    
+    .toast-message {
+      .text-body-b4-bold();
+      color: @basics-white !important;
+    }
+  }
+  
+  &--warning {
+    background: @actions-warning-primary;
+    border: none;
+    padding: 16px;
+    gap: 8px;
+    
+    i {
+      color: @basics-white;
+      font-size: 16px;
+    }
+    
+    .toast-message {
+      .text-body-b4-bold();
+      color: @basics-white !important;
+    }
+  }
+  
+  &--error {
+    background: @actions-error-primary;
+    border: none;
+    padding: 16px;
+    gap: 8px;
+    
+    i {
+      color: @basics-white;
+      font-size: 16px;
+    }
+    
+    .toast-message {
+      .text-body-b4-bold();
+      color: @basics-white !important;
+    }
+  }
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  
+  i {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  .toast-message {
+    .text-body-b4();
+    color: @grays-charcoal;
+    line-height: 1.4;
+  }
+}
+
+// Success toast specific content styling
+.toast--success .toast-content {
+  gap: 8px;
+  
+  .toast-message {
+    color: @basics-white !important;
+  }
+}
+
+// Confirmation Dialog Styles
+.confirmation-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 24px;
+}
+
+.confirmation-dialog {
+  background: @basics-white;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 542px;
+  max-width: 90vw;
+  position: relative;
+  padding: 24px;
+  
+  .dialog-close-btn {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .dialog-header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .dialog-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    
+    i {
+      color: @actions-warning-primary;
+      font-size: 32px;
+    }
+  }
+  
+  .dialog-title {
+    .text-heading-h3();
+    color: @grays-ink;
+    margin: 0;
+  }
+  
+  .dialog-description {
+    .text-body-b3();
+    color: @grays-steel;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+    width: 100%;
+    
+    .primary-button {
+      flex: 1;
+      width: 100%;
+    }
+  }
+}
+
+// Identify Patient Dialog Styles
+.identify-patient-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.identify-patient-dialog {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  .dialog-header {
+    padding: 16px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .dialog-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: @grays-ink;
+    margin: 32px 0 0 0;
+    text-align: center;
+  }
+  
+  .dialog-close-btn {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+  }
+  
+  .dialog-scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 24px 24px 24px;
+  }
+  
+  .dialog-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: @grays-ink;
+    margin: 16px 0 24px 0;
+    text-align: center;
+  }
+  
+  .dialog-fixed-actions {
+    padding: 16px 24px;
+    border-top: 1px solid @grays-light;
+    background: white;
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    
+    .primary-button {
+      width: 100%;
+    }
+  }
+}
+
+// Global dialog close button styling
+.dialog-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  transition: all 120ms ease;
+  color: @grays-steel;
+  
+  &:hover {
+    background: @grays-background;
+    color: @grays-charcoal;
+  }
+  
+  &:active {
+    background: @grays-light;
+  }
+  
+  i {
+    font-size: 16px;
+  }
+}
+
+.non-interactive-wrapper {
+  pointer-events: none;
+}
+
+.incomplete-patient-section {
+  margin-bottom: 24px;
+}
+
+.incomplete-patient-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: @grays-light;
+  border-radius: 8px;
+  border: 1px solid @grays-mid;
+}
+
+.patient-name-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 24px; // Prevents layout shift when chip disappears
+}
+
+.patient-chip-wrapper {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0; // Allow shrinking
+  
+  // Only animate the completed chip
+  .patient-chip--completed {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  &.chip-fading .patient-chip {
+    animation: fadeOut 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateX(5px) scale(0.98);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(10px) scale(0.95);
+    }
+  }
+}
+
+.patient-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: @basics-black;
+}
+
+.incomplete-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: @actions-warning-light;
+  color: @actions-warning-primary;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  
+  i {
+    font-size: 10px;
+  }
+}
+
+.search-section {
+  margin-bottom: 24px;
+  
+  h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: @basics-black;
+  }
+}
+
+.suggested-matches-section {
+  margin-bottom: 24px;
+  
+  h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: @basics-black;
+  }
+}
+
+.matches-count {
+  font-size: 14px;
+  color: @grays-steel;
+  margin-bottom: 12px;
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid @grays-light;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: @grays-light;
+    border-color: @grays-mid;
+  }
+  
+  &.selected {
+    background: @blues-light;
+    border-color: @blues-action;
+  }
+}
+
+.match-info {
+  flex: 1;
+}
+
+.match-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.match-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: @basics-black;
+}
+
+.match-percentage-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  
+  i {
+    font-size: 12px;
+    color: @blues-action;
+  }
+  
+  span {
+    .text-body-b6();
+    color: @blues-action;
+    font-weight: 600;
+  }
+}
+
+.match-id {
+  font-size: 14px;
+  color: @grays-steel;
+  margin-bottom: 8px;
+}
+
+.match-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: @grays-steel;
+  
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  i {
+    width: 12px;
+    text-align: center;
+  }
+}
+
+.search-results-section {
+  margin-bottom: 24px;
+  
+  h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: @basics-black;
+  }
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid @grays-light;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: @grays-light;
+    border-color: @grays-mid;
+  }
+  
+  &.selected {
+    background: @blues-light;
+    border-color: @blues-action;
+  }
+}
+
+.result-info {
+  flex: 1;
+}
+
+.result-name {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  color: @basics-black;
+  margin-bottom: 4px;
+}
+
+.result-id {
+  display: block;
+  font-size: 14px;
+  color: @grays-steel;
+  margin-bottom: 8px;
+}
+
+.result-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: @grays-steel;
+  
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  i {
+    width: 12px;
+    text-align: center;
+  }
+}
+
+// Update patient card styles for identify patient dialog
+.patient-card {
+  // Fix default styles
+  background: transparent;
+  border: none;
+  width: 100%;
+  min-height: 61px;
+  
+  &:hover {
+    background: @blues-light;
+  }
+  
+  &.selected {
+    background: @blues-light !important;
+    border: 1px solid @blues-action !important;
+  }
+  
+  // Fix for informative variant
+  &--informative {
+    .patient-extended-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    
+    .patient-name-id-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .patient-name {
+        margin: 0;
+      }
+      
+      .patient-id {
+        margin: 0;
+      }
+    }
+    
+    .patient-contact-info {
+      display: flex;
+      gap: 12px;
+      
+      .patient-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        .text-body-b6();
+        color: @grays-steel;
+        
+        i {
+          font-size: 10px;
+          color: @grays-blue;
+        }
+      }
+    }
+  }
+}
+
+// Patient match chip styles
+.patient-match-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  
+  i {
+    font-size: 12px;
+    color: @blues-action;
+  }
+  
+  span {
+    .text-body-b6();
+    color: @blues-action;
+    font-weight: 600;
+  }
+}
+
+.patient-match-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+// Fix patient info styles
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  
+  .patient-name-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2px;
+    
+    .patient-name-row {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      
+      .patient-name {
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.286;
+        letter-spacing: -0.007em;
+        color: #112D5C;
+        margin: 0;
+        flex-shrink: 0;
+      }
+    }
+    
+    .patient-id {
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.286;
+      color: #7F90AC;
+      margin: 0;
+      align-self: flex-start;
+    }
+  }
+  
+  .patient-extended-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    
+    .patient-name-id {
+      .patient-name {
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.286;
+        letter-spacing: -0.007em;
+        color: #112D5C;
+        margin: 0 0 4px 0;
+      }
+      
+      .patient-id {
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.286;
+        color: #7F90AC;
+        margin: 0;
+      }
+    }
+    
+    .patient-contact-info {
+      display: flex;
+      gap: 12px;
+      
+      .patient-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        .text-body-b6();
+        color: @grays-steel;
+        
+        i {
+          font-size: 10px;
+          color: @grays-blue;
+        }
+      }
+    }
+  }
+}
+
+.patient-pfp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.patient-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.patient-add-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.patient-edit-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }

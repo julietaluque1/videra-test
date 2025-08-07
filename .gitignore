@@ -18,3 +18,4 @@ yarn-debug.log*
 yarn-error.log*
 /.clj-kondo
 /.lsp
+/node_modules.bak

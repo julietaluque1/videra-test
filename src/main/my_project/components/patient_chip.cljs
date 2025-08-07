@@ -30,7 +30,7 @@
                              " patient-chip--" status)]
         
         [:div {:class chip-classes}
-         [:i {:class (str "fa fa-" chip-icon)}]
+         [:i {:class (str "fas fa-" chip-icon)}]
          [:span label]]))))
 
 ;; Convenience functions for specific chip types
@@ -69,10 +69,8 @@
    [:span "Speaker"]])
 
 (defn match-percentage-chip
-  "Match percentage chip for informative patient cards"
-  [{:keys [percentage state]
-    :or {state "default"}}]
-  [:div {:class (str "patient-status-chip patient-status-chip--match"
-                     (when (= state "active") " patient-status-chip--active"))}
-   [:i {:class "fa fa-sparkles"}]
+  "Match percentage chip for informative patient cards - text and icon only in action blue"
+  [percentage]
+  [:div {:class "patient-match-chip"}
+   [:i {:class "fa-solid fa-sparkles"}]
    [:span (str percentage "%")]])
